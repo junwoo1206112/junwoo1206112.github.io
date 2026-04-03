@@ -92,3 +92,64 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('포트폴리오 웹사이트가 로드되었습니다!');
+
+// GitHub 프로젝트 로드
+const GITHUB_USERNAME = 'kimjunwoo1206112-oss';
+const portfolioGrid = document.getElementById('portfolio-grid');
+
+if (portfolioGrid) {
+    async function loadGitHubProjects() {
+        try {
+            const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`);
+            
+            if (!response.ok) {
+                throw new Error('GitHub API 요청 실패');
+            }
+            
+            const repos = await response.json();
+            
+            portfolioGrid.innerHTML = '';
+            
+            if (repos.length === 0) {
+                portfolioGrid.innerHTML = '<p class="no-projects">공개된 프로젝트가 없습니다.</p>';
+                return;
+            }
+            
+            const emojis = ['📱', '💼', '📊', '🎨', '🚀', '🤖', '🎮', '🌐', '🔧', '⚙️'];
+            
+            repos.forEach((repo, index) => {
+                if (repo.fork) return;
+                
+                const emoji = emojis[index % emojis.length];
+                const languages = repo.language ? [repo.language] : [];
+                const topics = repo.topics || [];
+                const allTags = [...languages, ...topics].slice(0, 4);
+                
+                const card = document.createElement('div');
+                card.className = 'portfolio-item';
+                card.innerHTML = `
+                    <a href="${repo.html_url}" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="item-image">${emoji}</div>
+                        <h3>${repo.name}</h3>
+                        <p>${repo.description || '프로젝트 설명이 없습니다.'}</p>
+                        <div class="tags">
+                            ${allTags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </a>
+                `;
+                
+                portfolioGrid.appendChild(card);
+            });
+            
+            if (portfolioGrid.children.length === 0) {
+                portfolioGrid.innerHTML = '<p class="no-projects">공개된 프로젝트가 없습니다.</p>';
+            }
+            
+        } catch (error) {
+            console.error('프로젝트 로드 실패:', error);
+            portfolioGrid.innerHTML = '<p class="no-projects">프로젝트를 불러올 수 없습니다.</p>';
+        }
+    }
+    
+    loadGitHubProjects();
+}

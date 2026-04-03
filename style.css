@@ -332,6 +332,18 @@ footer {
     color: #666;
 }
 
+.portfolio-item a:hover h3 {
+    color: #667eea;
+}
+
+.loading, .no-projects {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 3rem;
+    grid-column: 1 / -1;
+}
+
 /* 연락처 페이지 */
 .contact-form {
     max-width: 600px;
