@@ -85,7 +85,7 @@ async function fetchRepos() {
     const res = await fetch(GITHUB_API);
     if (!res.ok) throw new Error('GitHub API 요청 실패');
     const repos = await res.json();
-    const exclude = ['WebBoard', 'test01', 'Raising-a-Snowman'];
+    const exclude = ['WebBoard', 'test01', 'Raising-a-Snowman', 'junwoo1206112.github.io'];
     return repos.filter(r => !r.fork && !exclude.includes(r.name));
 }
 
