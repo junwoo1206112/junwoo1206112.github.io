@@ -94,7 +94,7 @@ window.addEventListener('scroll', () => {
 console.log('포트폴리오 웹사이트가 로드되었습니다!');
 
 // GitHub 프로젝트 로드
-const GITHUB_USERNAME = 'kimjunwoo1206112-oss';
+const GITHUB_USERNAME = 'junwoo1206112';
 const portfolioGrid = document.getElementById('portfolio-grid');
 
 if (portfolioGrid) {
