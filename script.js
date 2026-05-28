@@ -41,15 +41,6 @@ function observeElements(selector) {
 
 observeElements('.skill-tag, .contact-item');
 
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('메시지가 전송되었습니다! (데모)');
-        contactForm.reset();
-    });
-}
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
