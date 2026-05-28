@@ -94,7 +94,8 @@ async function fetchRepos() {
     const res = await fetch(GITHUB_API);
     if (!res.ok) throw new Error('GitHub API 요청 실패');
     const repos = await res.json();
-    return repos.filter(r => !r.fork);
+    const exclude = ['WebBoard', 'test01', 'Raising-a-Snowman'];
+    return repos.filter(r => !r.fork && !exclude.includes(r.name));
 }
 
 function createProjectCard(repo, index) {
