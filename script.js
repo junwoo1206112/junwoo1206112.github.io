@@ -15,11 +15,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     }
 });
 
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
-};
-
 const observer = 'IntersectionObserver' in window
     ? new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -28,10 +23,10 @@ const observer = 'IntersectionObserver' in window
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions)
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' })
     : null;
 
-const projects = [
+const industrialProjects = [
     {
         title: 'Semiconductor Defect Vision Classifier',
         repo: 'Semiconductor-Defect-Vision-Classifier',
@@ -88,6 +83,36 @@ const projects = [
     }
 ];
 
+const gameProjects = [
+    {
+        title: 'Multiplay Fishing Game',
+        repo: 'MultiplayFishingGame',
+        summary: 'Unity와 Mirror Networking을 활용해 멀티플레이 낚시 게임의 동기화와 플레이 흐름을 구현한 프로젝트입니다.',
+        detail: '네트워크 플레이, 플레이어 상호작용, Unity C# 구조를 보여줄 수 있어 게임 회사 지원 시 가장 먼저 제시하기 좋은 게임 프로젝트입니다.',
+        tags: ['Unity', 'C#', 'Mirror', 'Multiplayer'],
+        category: 'Game Network',
+        accent: 'blue'
+    },
+    {
+        title: 'Realm Commander',
+        repo: 'RealmCommander',
+        summary: '전략/시뮬레이션 장르의 게임 시스템을 구성하며 상태, 명령, 플레이 흐름을 정리한 프로젝트입니다.',
+        detail: '게임 규칙과 시스템 설계 경험을 보여주는 보조 포트폴리오로, 단순 미니게임보다 기획과 구조 설명에 유리합니다.',
+        tags: ['Game System', 'C#', 'Simulation', 'Design'],
+        category: 'Game System',
+        accent: 'purple'
+    },
+    {
+        title: 'LLM NPC Dialogue System',
+        repo: 'LLM-NPC-Dialogue-System',
+        summary: 'NPC 대화 흐름에 LLM 활용 아이디어를 접목한 게임 AI 대화 시스템 프로젝트입니다.',
+        detail: '게임과 AI를 연결해 보여줄 수 있어, 게임 회사뿐 아니라 AI 서비스 회사에도 보조 자료로 활용하기 좋습니다.',
+        tags: ['Game AI', 'LLM', 'Dialogue', 'Prototype'],
+        category: 'Game AI',
+        accent: 'teal'
+    }
+];
+
 function githubUrl(repo) {
     return `https://github.com/junwoo1206112/${repo}`;
 }
@@ -132,8 +157,10 @@ function renderProjects(targetId, items, compact = false) {
     });
 }
 
-renderProjects('featured-grid', projects.slice(0, 3), true);
-renderProjects('portfolio-grid', projects, false);
+renderProjects('featured-grid', industrialProjects.slice(0, 3), true);
+renderProjects('portfolio-grid', industrialProjects, false);
+renderProjects('game-preview-grid', gameProjects.slice(0, 2), true);
+renderProjects('game-grid', gameProjects, false);
 
 document.querySelectorAll('.skill-tag, .contact-item, .page-content').forEach(el => {
     el.classList.add('fade-in');

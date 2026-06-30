@@ -300,6 +300,10 @@ nav {
     border-top: 1px solid var(--line);
 }
 
+.section-divider {
+    border-top: 1px solid var(--line);
+}
+
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
