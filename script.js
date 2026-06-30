@@ -1,16 +1,15 @@
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-if (hamburger) {
+if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
 }
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-const navItems = document.querySelectorAll('.nav-links a');
 
-navItems.forEach(link => {
+document.querySelectorAll('.nav-links a').forEach(link => {
     if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');
     }
@@ -18,155 +17,135 @@ navItems.forEach(link => {
 
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -40px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+const observer = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions)
+    : null;
 
-function observeElements(selector) {
-    document.querySelectorAll(selector).forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-}
-
-observeElements('.skill-tag, .contact-item');
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
-        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
-    } else {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+const projects = [
+    {
+        title: 'Semiconductor Defect Vision Classifier',
+        repo: 'Semiconductor-Defect-Vision-Classifier',
+        summary: '반도체 결함 이미지를 생성하고 특징을 추출한 뒤 softmax classifier로 결함 유형을 분류하는 Python 프로젝트입니다.',
+        detail: '데이터 생성, 학습, 평가, 혼동행렬, CSV 리포트까지 포함해 신입 포트폴리오에서 검증 흐름을 보여주기 좋습니다.',
+        tags: ['Python', 'Computer Vision', 'ML', 'CSV Report'],
+        category: 'AI Vision',
+        accent: 'blue'
+    },
+    {
+        title: 'Industrial AOI Vision Inspector',
+        repo: 'Industrial-AOI-Vision-Inspector',
+        summary: '제조 라인 AOI 검사를 가정해 ROI, 임계값, 연결요소 분석, PASS/FAIL 판정을 구현한 비전 검사 시뮬레이터입니다.',
+        detail: '검사 파라미터와 결과 리포트를 함께 남겨 제조 자동화 회사 지원용으로 설명하기 좋습니다.',
+        tags: ['C#', 'AOI', 'Vision', 'Inspection'],
+        category: 'Manufacturing',
+        accent: 'green'
+    },
+    {
+        title: 'GTS Control Monitor',
+        repo: 'GTS-Control-Monitor',
+        summary: '제조 장비의 위치 제어, 센서 상태, 알람, 운전 로그를 콘솔 기반으로 재현한 C# 장비 제어 시뮬레이터입니다.',
+        detail: 'PID 제어와 CSV 로그를 통해 장비 소프트웨어의 기본 흐름을 보여주는 대표 프로젝트입니다.',
+        tags: ['C#', 'PID', 'Equipment', 'Logging'],
+        category: 'Equipment Control',
+        accent: 'orange'
+    },
+    {
+        title: 'Manufacturing ML Portfolio',
+        repo: 'manufacturing-ml-portfolio',
+        summary: '제조 데이터를 활용한 머신러닝 분석 흐름을 정리한 프로젝트입니다.',
+        detail: '제조·품질 데이터를 다루는 회사에 보조 포트폴리오로 제시하기 좋습니다.',
+        tags: ['Python', 'ML', 'Manufacturing', 'Analysis'],
+        category: 'Data',
+        accent: 'purple'
+    },
+    {
+        title: 'AegisFlow NIDS',
+        repo: 'AegisFlow-NIDS',
+        summary: '네트워크 침입 탐지 흐름을 실험하고 결과를 정리한 보안·AI 프로젝트입니다.',
+        detail: 'AI 활용 범위를 제조 비전 외 보안 영역까지 확장해 보여줄 수 있습니다.',
+        tags: ['Python', 'Security', 'NIDS', 'AI'],
+        category: 'Security',
+        accent: 'red'
+    },
+    {
+        title: 'Roomie AI',
+        repo: 'Roomie-AI-',
+        summary: '사용자 입력을 기반으로 생활 보조형 AI 기능을 구성한 애플리케이션 프로젝트입니다.',
+        detail: 'AI 서비스 기획과 구현 경험을 보여주는 보조 프로젝트로 활용할 수 있습니다.',
+        tags: ['AI', 'App', 'UX', 'Prototype'],
+        category: 'AI Service',
+        accent: 'teal'
     }
-
-    lastScroll = currentScroll;
-});
-
-const GITHUB_USERNAME = 'junwoo1206112';
-const GITHUB_API = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`;
-
-const emojis = ['🎮', '📱', '🤖', '🎨', '🚀', '🌐', '🔧', '⚙️', '📊', '💼'];
-const gradients = [
-    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-    'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-    'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-    'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-    'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)'
 ];
 
-async function fetchRepos() {
-    const res = await fetch(GITHUB_API);
-    if (!res.ok) throw new Error('GitHub API 요청 실패');
-    const repos = await res.json();
-    const exclude = ['WebBoard', 'test01', 'Raising-a-Snowman', 'junwoo1206112.github.io'];
-    return repos.filter(r => !r.fork && !exclude.includes(r.name));
+function githubUrl(repo) {
+    return `https://github.com/junwoo1206112/${repo}`;
 }
 
-function createProjectCard(repo, index) {
-    const languages = repo.language ? [repo.language] : [];
-    const topics = repo.topics || [];
-    const allTags = [...languages, ...topics].slice(0, 4);
-    const emoji = emojis[index % emojis.length];
-    const grad = gradients[index % gradients.length];
+function createProjectCard(project, index, compact = false) {
+    const card = document.createElement('article');
+    card.className = `project-card fade-in accent-${project.accent}`;
+    card.style.transitionDelay = `${Math.min(index * 80, 320)}ms`;
 
-    const card = document.createElement('div');
-    card.className = 'project-card';
     card.innerHTML = `
-        <a href="${repo.html_url}" target="_blank" style="text-decoration: none; color: inherit;">
-            <div class="project-image" style="background: ${grad}; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">${emoji}</div>
-            <h3>${repo.name}</h3>
-            <p>${repo.description || '프로젝트 설명이 없습니다.'}</p>
+        <a href="${githubUrl(project.repo)}" target="_blank" rel="noreferrer">
+            <div class="project-topline">
+                <span>${project.category}</span>
+                <strong>${String(index + 1).padStart(2, '0')}</strong>
+            </div>
+            <h3>${project.title}</h3>
+            <p>${compact ? project.summary : project.detail}</p>
             <div class="tags">
-                ${allTags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
             </div>
         </a>
     `;
+
     return card;
 }
 
-const featuredGrid = document.getElementById('featured-grid');
-if (featuredGrid) {
-    (async () => {
-        try {
-            const repos = await fetchRepos();
-            featuredGrid.innerHTML = '';
-            repos.slice(0, 3).forEach((repo, i) => {
-                const card = createProjectCard(repo, i);
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                featuredGrid.appendChild(card);
-                observer.observe(card);
-            });
-        } catch {
-            featuredGrid.innerHTML = '<p class="no-projects">프로젝트를 불러올 수 없습니다.</p>';
+function renderProjects(targetId, items, compact = false) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.innerHTML = '';
+
+    items.forEach((project, index) => {
+        const card = createProjectCard(project, index, compact);
+        target.appendChild(card);
+
+        if (observer) {
+            observer.observe(card);
+        } else {
+            card.classList.add('is-visible');
         }
-    })();
+    });
 }
 
-const portfolioGrid = document.getElementById('portfolio-grid');
-if (portfolioGrid) {
-    (async () => {
-        try {
-            const repos = await fetchRepos();
-            portfolioGrid.innerHTML = '';
-            if (repos.length === 0) {
-                portfolioGrid.innerHTML = '<p class="no-projects">공개된 프로젝트가 없습니다.</p>';
-                return;
-            }
-            repos.forEach((repo, i) => {
-                const languages = repo.language ? [repo.language] : [];
-                const topics = repo.topics || [];
-                const allTags = [...languages, ...topics].slice(0, 4);
-                const emoji = emojis[i % emojis.length];
+renderProjects('featured-grid', projects.slice(0, 3), true);
+renderProjects('portfolio-grid', projects, false);
 
-                const item = document.createElement('div');
-                item.className = 'portfolio-item';
-                item.innerHTML = `
-                    <a href="${repo.html_url}" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="item-image">${emoji}</div>
-                        <h3>${repo.name}</h3>
-                        <p>${repo.description || '프로젝트 설명이 없습니다.'}</p>
-                        <div class="tags">
-                            ${allTags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                        </div>
-                    </a>
-                `;
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(30px)';
-                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                portfolioGrid.appendChild(item);
-                observer.observe(item);
-            });
-        } catch {
-            portfolioGrid.innerHTML = '<p class="no-projects">프로젝트를 불러올 수 없습니다.</p>';
-        }
-    })();
-}
+document.querySelectorAll('.skill-tag, .contact-item, .page-content').forEach(el => {
+    el.classList.add('fade-in');
+    if (observer) {
+        observer.observe(el);
+    } else {
+        el.classList.add('is-visible');
+    }
+});
+
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
+});

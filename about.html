@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>소개 | Portfolio</title>
+    <title>소개 | 김준우 포트폴리오</title>
+    <meta name="description" content="김준우의 개발 방향, 기술 스택, 대표 프로젝트 소개입니다.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">Portfolio</a>
+                <a href="index.html">Junwoo Portfolio</a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">홈</a></li>
@@ -18,67 +19,61 @@
                 <li><a href="portfolio.html">프로젝트</a></li>
                 <li><a href="contact.html">연락처</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" type="button" aria-label="메뉴 열기">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main>
         <section class="page-section">
-            <h1>소개</h1>
+            <div class="section-heading">
+                <p class="eyebrow">About</p>
+                <h1>문제를 재현하고, 기록하고, 개선하는 개발자</h1>
+            </div>
+
             <div class="page-content">
-                <h2>Unity C# 게임 개발자</h2>
+                <h2>개발 방향</h2>
                 <p>
-                    저는 Unity와 C#을 주력으로 다양한 장르의 게임을 개발하는 게임 개발자입니다.
-                    멀티플레이 낚시 게임, 텍스트 어드벤처, 클리커 게임, 스크롤 게임 등
-                    다양한 프로젝트를 통해 게임 설계와 개발 전반에 걸친 경험을 쌓아왔습니다.
-                </p>
-                <p>
-                    특히 <strong>MultiplayFishingGame</strong>에서는 Mirror 네트워킹을 활용한
-                    멀티플레이 구현에 도전했고, <strong>Text-Adventure-Game</strong>에서는
-                    FSM 상태 머신과 AI 게임 마스터 시스템을 갖춘 텍스트 어드벤처 엔진을
-                    Unity C# 기반으로 직접 제작했습니다.
-                </p>
-                <p>
-                    또한 <strong>SnowmanCount</strong>와 <strong>CaterpillarsClickerGame01</strong>과 같은
-                    캐주얼 게임부터 <strong>Designing-a-Worldview-Simulation-Agent</strong>와 같은
-                    Python 기반 AI 세계관 시뮬레이션까지, 폭넓은 개발 스펙트럼을 가지고 있습니다.
-                    게임 개발뿐 아니라 WebBoard와 같은 웹 프로젝트를 통해 JavaScript 기반
-                    개발 경험도 갖추고 있습니다.
-                </p>
-                <p>
-                    새로운 장르와 기술에 도전하는 것을 즐기며, 지속적으로 학습하고 성장하는
-                    개발자가 되기 위해 노력하고 있습니다.
+                    단순히 화면을 만드는 것보다 실제 산업 현장에서 필요한 흐름을 코드로 재현하는 데 관심이 있습니다.
+                    장비 상태를 시뮬레이션하고, 검사 결과를 CSV로 남기고, 모델 결과를 지표로 검증하는 방식으로 프로젝트를 정리하고 있습니다.
                 </p>
 
-                <h2>주요 프로젝트</h2>
-                <p><strong>MultiplayFishingGame</strong> — Unity, C#, Mirror Networking — 멀티플레이 낚시 게임</p>
-                <p><strong>Text-Adventure-Game</strong> — Unity, C# — FSM 기반 텍스트 어드벤처 엔진</p>
-                <p><strong>SnowmanCount</strong> — Unity, C# — 광고형 캐주얼 게임</p>
-                <p><strong>CaterpillarsClickerGame01</strong> — Unity, C# — 클리커 게임</p>
-                <p><strong>Designing-a-Worldview-Simulation-Agent</strong> — Python — AI 세계관 시뮬레이션</p>
+                <h2>대표 역량</h2>
+                <div class="split-list">
+                    <div>
+                        <h3>제조 소프트웨어</h3>
+                        <p>C# 기반 장비 제어 시뮬레이션, 운전 로그, 알람 상태, PASS/FAIL 판정 흐름을 구현했습니다.</p>
+                    </div>
+                    <div>
+                        <h3>비전·AI</h3>
+                        <p>Python 기반 결함 이미지 생성, 특징 추출, 분류 모델 학습, 혼동행렬 리포트를 구성했습니다.</p>
+                    </div>
+                    <div>
+                        <h3>검증 습관</h3>
+                        <p>README, 실행 방법, 테스트 결과, 샘플 로그를 남겨 채용 담당자가 결과를 빠르게 확인할 수 있게 정리합니다.</p>
+                    </div>
+                </div>
 
                 <h2>기술 스택</h2>
-                <p><strong>Game Development:</strong> Unity, C#, Mirror Networking</p>
-                <p><strong>Programming:</strong> C#, Python, JavaScript</p>
-                <p><strong>Web:</strong> HTML, CSS, JavaScript</p>
-                <p><strong>Tools:</strong> Git, GitHub, Unity Editor</p>
+                <p><strong>Languages:</strong> C#, Python, JavaScript</p>
+                <p><strong>Domains:</strong> Manufacturing Simulation, Computer Vision, Machine Learning, Network Security</p>
+                <p><strong>Tools:</strong> Git, GitHub, CSV Report, Markdown Documentation</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 김준우 Portfolio</p>
         <div class="social-links">
-            <a href="https://github.com/junwoo1206112">GitHub</a>
-            <a href="https://github.com/junwoo1206112?tab=repositories">Projects</a>
+            <a href="https://github.com/junwoo1206112" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="portfolio.html">Projects</a>
             <a href="mailto:kdong135@naver.com">Email</a>
         </div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>

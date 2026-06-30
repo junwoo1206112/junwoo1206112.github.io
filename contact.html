@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>연락처 | Portfolio</title>
+    <title>연락처 | 김준우 포트폴리오</title>
+    <meta name="description" content="김준우 포트폴리오 연락처와 GitHub 링크입니다.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">Portfolio</a>
+                <a href="index.html">Junwoo Portfolio</a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">홈</a></li>
@@ -18,69 +19,48 @@
                 <li><a href="portfolio.html">프로젝트</a></li>
                 <li><a href="contact.html">연락처</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" type="button" aria-label="메뉴 열기">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main>
         <section class="page-section">
-            <h1>연락처</h1>
-            <div class="page-content">
-                <p style="text-align: center; margin-bottom: 3rem;">
-                    프로젝트나 협업에 관심이 있으시면 언제든지 연락 주세요!
-                </p>
+            <div class="section-heading">
+                <p class="eyebrow">Contact</p>
+                <h1>연락처</h1>
+                <p>지원서 검토 시 바로 확인할 수 있는 주요 링크입니다.</p>
+            </div>
 
-                <form class="contact-form" action="https://formspree.io/f/meedvvqw" method="POST">
-                    <div class="form-group">
-                        <label for="name">이름</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">이메일</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">제목</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">메시지</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">메시지 보내기</button>
-                </form>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>📧 이메일</h3>
-                        <p>kdong135@naver.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>🐙 GitHub</h3>
-                        <p>github.com/junwoo1206112</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>📍 위치</h3>
-                        <p>경남 김해시</p>
-                    </div>
+            <div class="contact-info">
+                <a class="contact-item" href="mailto:kdong135@naver.com">
+                    <h3>Email</h3>
+                    <p>kdong135@naver.com</p>
+                </a>
+                <a class="contact-item" href="https://github.com/junwoo1206112" target="_blank" rel="noreferrer">
+                    <h3>GitHub</h3>
+                    <p>github.com/junwoo1206112</p>
+                </a>
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>경남 김해 · 부산/경남 및 수도권 지원 가능</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 김준우 Portfolio</p>
         <div class="social-links">
-            <a href="https://github.com/junwoo1206112">GitHub</a>
-            <a href="https://github.com/junwoo1206112?tab=repositories">Projects</a>
+            <a href="https://github.com/junwoo1206112" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="portfolio.html">Projects</a>
             <a href="mailto:kdong135@naver.com">Email</a>
         </div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>

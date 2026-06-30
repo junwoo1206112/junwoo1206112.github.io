@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>홈 | 내 홈페이지</title>
+    <title>김준우 | AI·제조 소프트웨어 포트폴리오</title>
+    <meta name="description" content="AI, 제조 장비 제어, 비전 검사, 네트워크 보안 프로젝트를 정리한 김준우 포트폴리오입니다.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">Portfolio</a>
+                <a href="index.html">Junwoo Portfolio</a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">홈</a></li>
@@ -18,53 +19,79 @@
                 <li><a href="portfolio.html">프로젝트</a></li>
                 <li><a href="contact.html">연락처</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" type="button" aria-label="메뉴 열기">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>안녕하세요!</h1>
-                <h2>Unity C# 게임 개발자</h2>
-                <p>다양한 장르의 게임을 개발하며 새로운 도전을 즐깁니다.</p>
-                <a href="portfolio.html" class="cta-button">프로젝트 보기</a>
+                <p class="eyebrow">AI · Vision · Manufacturing Software</p>
+                <h1>제조 현장의 문제를 코드로 검증하는 신입 개발자 김준우입니다.</h1>
+                <p>
+                    장비 제어 시뮬레이션, AOI 비전 검사, 반도체 결함 분류처럼
+                    채용 담당자가 바로 확인할 수 있는 프로젝트 중심으로 정리했습니다.
+                </p>
+                <div class="hero-actions">
+                    <a href="portfolio.html" class="primary-button">대표 프로젝트 보기</a>
+                    <a href="https://github.com/junwoo1206112" class="secondary-button" target="_blank" rel="noreferrer">GitHub 전체 보기</a>
+                </div>
+            </div>
+            <div class="hero-panel" aria-label="포트폴리오 핵심 역량">
+                <div>
+                    <strong>3</strong>
+                    <span>제조·비전 대표작</span>
+                </div>
+                <div>
+                    <strong>C# / Python</strong>
+                    <span>시뮬레이션과 데이터 처리</span>
+                </div>
+                <div>
+                    <strong>CSV / Report</strong>
+                    <span>검증 가능한 실행 결과</span>
+                </div>
             </div>
         </section>
 
         <section class="featured">
-            <h2>최근 프로젝트</h2>
+            <div class="section-heading">
+                <p class="eyebrow">Featured Work</p>
+                <h2>지원서에 먼저 보여줄 대표 프로젝트</h2>
+            </div>
             <div class="project-grid" id="featured-grid">
-                <p class="loading">프로젝트를 불러오는 중...</p>
+                <p class="loading">프로젝트를 불러오는 중입니다.</p>
             </div>
         </section>
 
         <section class="skills">
-            <h2>기술 스택</h2>
+            <div class="section-heading">
+                <p class="eyebrow">Core Stack</p>
+                <h2>주요 기술 스택</h2>
+            </div>
             <div class="skill-tags">
-                <span class="skill-tag">Unity</span>
                 <span class="skill-tag">C#</span>
-                <span class="skill-tag">Mirror Networking</span>
                 <span class="skill-tag">Python</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">CSV Logging</span>
+                <span class="skill-tag">GitHub</span>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 김준우 Portfolio</p>
         <div class="social-links">
-            <a href="https://github.com/junwoo1206112">GitHub</a>
-            <a href="https://github.com/junwoo1206112?tab=repositories">Projects</a>
+            <a href="https://github.com/junwoo1206112" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="portfolio.html">Projects</a>
             <a href="mailto:kdong135@naver.com">Email</a>
         </div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
