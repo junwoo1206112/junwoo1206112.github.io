@@ -113,6 +113,27 @@ const gameProjects = [
     }
 ];
 
+const casualGameProjects = [
+    {
+        title: 'Snowman Crowd Runner',
+        repo: 'SnowmanCount',
+        summary: 'Unity 기반 캐주얼 러너/카운트 게임 프로토타입입니다. 스와이프 이동, 게이트 계산, 팔로워 군중, 장애물, 적 그룹, 보스전, 레벨 데이터 파이프라인을 정리했습니다.',
+        detail: 'Count Masters류 하이퍼캐주얼 구조를 연습한 프로젝트로, 데이터 기반 레벨 구성과 군중/장애물/전투 루프를 보여주는 보조 게임 포트폴리오입니다.',
+        tags: ['Unity', 'C#', 'Casual Runner', 'Data'],
+        category: 'Casual Prototype',
+        accent: 'orange'
+    },
+    {
+        title: 'Caterpillar Clicker',
+        repo: 'CaterpillarsClickerGame01',
+        summary: 'Unity 기반 클릭커 게임 프로토타입입니다. 터치 입력, 점수/아이템 루프, 터치 기능 모듈, 캐릭터 진화와 UI 구성을 정리했습니다.',
+        detail: '클릭커 장르의 반복 성장 루프와 데이터/ScriptableObject 기반 기능 확장을 보여주는 보조 캐주얼 게임 포트폴리오입니다.',
+        tags: ['Unity', 'C#', 'Clicker', 'ScriptableObject'],
+        category: 'Casual Prototype',
+        accent: 'green'
+    }
+];
+
 function githubUrl(repo) {
     return `https://github.com/junwoo1206112/${repo}`;
 }
@@ -161,6 +182,7 @@ renderProjects('featured-grid', industrialProjects.slice(0, 3), true);
 renderProjects('portfolio-grid', industrialProjects, false);
 renderProjects('game-preview-grid', gameProjects.slice(0, 2), true);
 renderProjects('game-grid', gameProjects, false);
+renderProjects('casual-game-grid', casualGameProjects, false);
 
 document.querySelectorAll('.skill-tag, .contact-item, .page-content').forEach(el => {
     el.classList.add('fade-in');
