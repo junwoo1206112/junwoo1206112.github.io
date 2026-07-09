@@ -73,6 +73,15 @@ const industrialProjects = [
         accent: 'red'
     },
     {
+        title: 'Deep Learning Portfolio',
+        repo: 'deep-learning-portfolio',
+        summary: '제조 공정 센서와 결함 데이터를 LSTM, GRU, Transformer, CNN, Autoencoder, VAE로 실험한 딥러닝 포트폴리오입니다.',
+        detail: '예측, 불량 분류, 이상 탐지까지 여러 딥러닝 접근을 한 저장소에서 보여주며 제조 데이터 분석 역량을 보강합니다.',
+        tags: ['Python', 'Deep Learning', 'Manufacturing', 'Anomaly'],
+        category: 'Deep Learning',
+        accent: 'purple'
+    },
+    {
         title: 'Roomie AI',
         repo: 'Roomie-AI-',
         summary: '사용자 입력을 기반으로 생활 보조형 AI 기능을 구성한 애플리케이션 프로젝트입니다.',
@@ -110,6 +119,108 @@ const gameProjects = [
         tags: ['Game AI', 'LLM', 'Dialogue', 'Prototype'],
         category: 'Game AI',
         accent: 'teal'
+    },
+    {
+        title: 'POKO AI Worldview Simulator',
+        repo: 'POKO-AI-Worldview-Simulator',
+        summary: '세계관과 에이전트 흐름을 실험하는 C# 기반 시뮬레이션 게임 프로토타입입니다.',
+        detail: '단순 미니게임을 넘어 세계 상태, 규칙, 행동 흐름을 설계하는 경험을 보여주는 게임 시스템 프로젝트입니다.',
+        tags: ['C#', 'Simulation', 'Game AI', 'Worldview'],
+        category: 'Simulation',
+        accent: 'green'
+    },
+    {
+        title: 'Text Adventure Game',
+        repo: 'Text-Adventure-Game',
+        summary: 'Unity C# 기반 텍스트 어드벤처 게임 엔진 프로젝트입니다.',
+        detail: '텍스트 기반 장면 흐름, 명령 입력, 재사용 가능한 게임 구조를 정리한 엔진형 보조 프로젝트입니다.',
+        tags: ['Unity', 'C#', 'Game Engine', 'Narrative'],
+        category: 'Game Engine',
+        accent: 'orange'
+    },
+    {
+        title: 'Worldview Simulation Agent',
+        repo: 'Designing-a-Worldview-Simulation-Agent',
+        summary: '세계관 기반 시뮬레이션 에이전트 설계를 실험한 Python 프로젝트입니다.',
+        detail: '에이전트 설계, 규칙 모델링, 시뮬레이션 구조를 Python으로 탐색한 프로젝트로 게임 AI 설명을 보강합니다.',
+        tags: ['Python', 'Agent', 'Simulation', 'Design'],
+        category: 'Agent Design',
+        accent: 'red'
+    },
+    {
+        title: 'A World View Simulation',
+        repo: 'A-World-View-Simulation',
+        summary: '세계 상태와 규칙 기반 시뮬레이션을 탐색한 초기 저장소입니다.',
+        detail: '이후 게임과 에이전트 프로젝트로 이어지는 세계관 시뮬레이션 개념 실험을 보여주는 보조 프로젝트입니다.',
+        tags: ['Simulation', 'World Model', 'Prototype'],
+        category: 'Simulation',
+        accent: 'purple'
+    }
+];
+
+const webProjects = [
+    {
+        title: 'CS Response Draft Tool',
+        repo: 'cs-response-draft-tool',
+        summary: '고객 문의를 분석해 응대 가이드와 답변 초안을 생성하는 웹 기반 업무 자동화 도구입니다.',
+        detail: '반복적인 CS 응대 초안 작성 과정을 구조화하고, 입력 내용에 따라 톤과 답변 방향을 정리하는 실무형 웹 도구입니다.',
+        tags: ['Web App', 'Automation', 'CS', 'AI Assist'],
+        category: 'Web Automation',
+        accent: 'blue'
+    },
+    {
+        title: 'Nara Bidding',
+        repo: 'nara-bidding',
+        summary: '조달청 나라장터 공공데이터 API를 활용해 입찰공고를 조회하는 풀스택 웹 프로젝트입니다.',
+        detail: '공공 API 연동, 검색 조회 흐름, 데이터 표시 화면을 구현한 프로젝트로 외부 데이터를 사용자가 검토하기 쉬운 형태로 정리합니다.',
+        tags: ['Web', 'Public API', 'Data', 'Search'],
+        category: 'Data Web',
+        accent: 'green'
+    },
+    {
+        title: 'June Toss Vibe Coding',
+        repo: 'June-Toss-Vibe-Coding',
+        summary: '사용자 상황에 맞춰 음식을 추천하는 미니앱 형태의 웹 프로젝트입니다.',
+        detail: '간단한 사용자 선택 흐름과 추천 결과 화면을 구성한 프로젝트로 모바일 친화 UI와 서비스 흐름 구현 경험을 보여줍니다.',
+        tags: ['Mini App', 'Recommendation', 'UI', 'Web'],
+        category: 'Mini App',
+        accent: 'teal'
+    },
+    {
+        title: 'Roomie AI',
+        repo: 'Roomie-AI-',
+        summary: '방 사진과 사용자 조건을 바탕으로 인테리어 스타일과 배치를 제안하는 AI 서비스형 프로젝트입니다.',
+        detail: '사용자 입력, 이미지/공간 조건, 추천 결과를 연결하는 서비스 기획과 구현 경험을 보여줍니다.',
+        tags: ['AI Service', 'Web', 'UX', 'Recommendation'],
+        category: 'AI Web',
+        accent: 'purple'
+    },
+    {
+        title: 'Psychological Counseling',
+        repo: 'Psychological-Counseling',
+        summary: '심리 체크와 상담 흐름을 웹에서 제공하는 사용자 중심 서비스 프로젝트입니다.',
+        detail: '자가 진단, 질문 흐름, 결과 안내처럼 사용자 입력을 받아 화면과 결과를 구성하는 웹 서비스 경험을 보여줍니다.',
+        tags: ['Web Service', 'Survey', 'UX', 'Health'],
+        category: 'Service Web',
+        accent: 'orange'
+    },
+    {
+        title: 'Portfolio Website',
+        repo: 'junwoo1206112.github.io',
+        summary: 'GitHub 프로젝트를 분야별로 선별해 보여주는 공용 포트폴리오 웹사이트입니다.',
+        detail: '제조·AI, 웹, 게임 프로젝트를 한 곳에서 확인할 수 있도록 구성한 정적 포트폴리오 사이트입니다.',
+        tags: ['Portfolio', 'HTML', 'CSS', 'JavaScript'],
+        category: 'Portfolio',
+        accent: 'red'
+    },
+    {
+        title: 'WebBoard',
+        repo: 'WebBoard',
+        summary: '게시판 형태의 웹 애플리케이션 구조를 연습한 JavaScript 프로젝트입니다.',
+        detail: '기본 웹 화면 구성, 브라우저 상호작용, 게시판형 콘텐츠 흐름을 보여주는 웹 기초 프로젝트입니다.',
+        tags: ['JavaScript', 'Web', 'Board', 'CRUD'],
+        category: 'Web Foundation',
+        accent: 'green'
     }
 ];
 
@@ -131,6 +242,42 @@ const casualGameProjects = [
         tags: ['Unity', 'C#', 'Clicker', 'ScriptableObject'],
         category: 'Casual Prototype',
         accent: 'green'
+    },
+    {
+        title: 'Raising a Snowman',
+        repo: 'Raising-a-Snowman',
+        summary: '눈사람을 키우는 흐름을 중심으로 한 Unity C# 캐주얼 게임 프로토타입입니다.',
+        detail: '성장형 캐주얼 게임 루프, 오브젝트 상호작용, 간단한 상태 관리를 보여주는 보조 프로젝트입니다.',
+        tags: ['Unity', 'C#', 'Casual', 'Progression'],
+        category: 'Casual Prototype',
+        accent: 'blue'
+    },
+    {
+        title: 'New Fighter Scroll Game',
+        repo: 'New-Fighter-Scroll-Game',
+        summary: '횡스크롤 액션 게임의 기본 구조를 연습한 C# 프로토타입입니다.',
+        detail: '플레이어 이동, 액션 게임 흐름, Unity/C# 기반 게임 구조 연습을 보여주는 보조 프로젝트입니다.',
+        tags: ['Unity', 'C#', 'Action', 'Side Scroll'],
+        category: 'Action Prototype',
+        accent: 'red'
+    },
+    {
+        title: 'Scroll',
+        repo: 'Scroll',
+        summary: '스크롤 방식의 이동과 화면 흐름을 연습한 C# 게임 프로토타입입니다.',
+        detail: '작은 규모의 Unity/C# 저장소지만 캐주얼 및 액션 게임 개발 경험을 보완하는 프로젝트입니다.',
+        tags: ['C#', 'Scrolling', 'Prototype'],
+        category: 'Game Prototype',
+        accent: 'purple'
+    },
+    {
+        title: 'Poco',
+        repo: 'poco',
+        summary: 'C# 기반 프로그래밍 및 게임 개발 연습을 담은 보조 저장소입니다.',
+        detail: '공개 GitHub 프로젝트 전체를 포트폴리오에서 빠짐없이 확인할 수 있도록 포함한 C# 연습 프로젝트입니다.',
+        tags: ['C#', 'Practice', 'Prototype'],
+        category: 'C# Practice',
+        accent: 'teal'
     }
 ];
 
@@ -180,6 +327,8 @@ function renderProjects(targetId, items, compact = false) {
 
 renderProjects('featured-grid', industrialProjects.slice(0, 3), true);
 renderProjects('portfolio-grid', industrialProjects, false);
+renderProjects('web-preview-grid', webProjects.slice(0, 3), true);
+renderProjects('web-grid', webProjects, false);
 renderProjects('game-preview-grid', gameProjects.slice(0, 2), true);
 renderProjects('game-grid', gameProjects, false);
 renderProjects('casual-game-grid', casualGameProjects, false);
